@@ -10,25 +10,29 @@ export default function Home() {
     <main className="bg-black text-white min-h-screen">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full bg-black text-white border-b border-gray-700 py-4 z-50 shadow-sm">
-        <div className="max-w-5xl mx-auto flex justify-between items-center px-6">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+  <div className="max-w-5xl mx-auto flex justify-between items-center px-6 py-4">
 
-          <h1 className="font-bold text-xl">
-            Hasiba Portfolio
-          </h1>
+    <h1 className="text-xl font-semibold tracking-widest font-serif"
+      style={{
+        background: "linear-gradient(90deg, #a855f7, #ec4899)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      }}>
+      Hasiba Nazir
+    </h1>
 
-          <div className="space-x-6 text-sm md:text-base">
-            <a href="#home" className="hover:text-gray-400">Home</a>
-            <a href="#about" className="hover:text-gray-400">About Me</a>
-            <a href="#education" className="hover:text-gray-400">Education</a>
-            <a href="#skills" className="hover:text-gray-400">Skills</a>
-            <a href="#projects" className="hover:text-gray-400">Projects</a>
-            <a href="#contact" className="hover:text-gray-400">Contact</a>
-          </div>
+    <div className="space-x-1 text-sm md:text-base">
+      <a href="#home" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">Home</a>
+      <a href="#about" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">About Me</a>
+      <a href="#education" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">Education</a>
+      <a href="#skills" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">Skills</a>
+      <a href="#projects" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">Projects</a>
+      <a href="#contact" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">Contact</a>
+    </div>
 
-        </div>
-      </nav>
-
+  </div>
+</nav>
       {/* HERO SECTION */}
       <section id="home" className="flex items-center justify-center h-screen pt-20">
 
