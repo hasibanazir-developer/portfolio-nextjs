@@ -1,38 +1,63 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
+    const [open, setOpen] = useState(false);
   return (
     <main className="bg-black text-white min-h-screen overflow-x-hidden">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-  <div className="max-w-5xl mx-auto flex justify-between items-center px-6 py-4">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+      <div className="max-w-5xl mx-auto flex justify-between items-center px-6 py-4">
 
-    <h1 className="text-xl font-semibold tracking-widest font-serif"
-      style={{
-        background: "linear-gradient(90deg, #a855f7, #ec4899)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-      }}>
-      Hasiba Nazir
-    </h1>
+        {/* Logo */}
+        <h1
+          className="text-xl font-semibold tracking-widest font-serif"
+          style={{
+            background: "linear-gradient(90deg, #a855f7, #ec4899)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          Hasiba Nazir
+        </h1>
 
-    <div className="space-x-1 text-sm md:text-base flex flex-wrap justify-center md:justify-end gap-1">
-      <a href="#home" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">Home</a>
-      <a href="#about" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">About Me</a>
-      <a href="#education" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">Education</a>
-      <a href="#skills" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">Skills</a>
-     <a href="#expertise" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200"> Expertise</a>  
-     <a href="#contact" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5 transition-all duration-200">Contact</a>
-    </div>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-1 text-sm md:text-base">
+          <a href="#home" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5">Home</a>
+          <a href="#about" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5">About Me</a>
+          <a href="#education" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5">Education</a>
+          <a href="#skills" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5">Skills</a>
+          <a href="#expertise" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5">Expertise</a>
+          <a href="#contact" className="text-gray-400 hover:text-white px-3 py-1.5 rounded-md hover:bg-white/5">Contact</a>
+        </div>
 
-  </div>
-</nav>
+        {/* Hamburger Button */}
+        <button
+          className="md:hidden text-white text-2xl"
+          onClick={() => setOpen(!open)}
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="md:hidden bg-black/95 border-t border-white/10 px-6 py-4 space-y-2">
+          <a onClick={() => setOpen(false)} href="#home" className="block text-gray-400 hover:text-white py-2">Home</a>
+          <a onClick={() => setOpen(false)} href="#about" className="block text-gray-400 hover:text-white py-2">About Me</a>
+          <a onClick={() => setOpen(false)} href="#education" className="block text-gray-400 hover:text-white py-2">Education</a>
+          <a onClick={() => setOpen(false)} href="#skills" className="block text-gray-400 hover:text-white py-2">Skills</a>
+          <a onClick={() => setOpen(false)} href="#expertise" className="block text-gray-400 hover:text-white py-2">Expertise</a>
+          <a onClick={() => setOpen(false)} href="#contact" className="block text-gray-400 hover:text-white py-2">Contact</a>
+        </div>
+      )}
+    </nav>
       {/* HERO SECTION */}
     <section
   id="home"
